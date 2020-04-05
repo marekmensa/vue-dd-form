@@ -30,11 +30,11 @@ exports.userCreated = functions.firestore
 /* ===
   sends 'preparation' or 'invite' email
   === */
-exports.lessonChanged = functions.firestore
+exports.lessonCreated = functions.firestore
   .document('lessons/{lesson}')
-  .onWrite(async (change, context) => {
-    if (!change.after.exists) return null;
-    const data = change.after.data();
+  .onCreate(async (snap) => {
+    if (!snap.exists) return null;
+    const data = snap.data();
     let name = '';
     let school = '';
     let email = data.author;
@@ -58,27 +58,14 @@ exports.lessonChanged = functions.firestore
       date,
     };
 
-    let type = '';
-
-    if (!change.before.exists) {
-      type = 'preparation';
-    } else if (
-      change.before.data().status === 'draft' &&
-      change.after.data().status === 'live'
-    ) {
-      type = 'invite';
-    }
-
-    if (!type || data.invited) return null;
-
-    if (type === 'invite') await change.after.ref.update({ invited: true });
+    let type = 'preparation';   
 
     for (const viewerKey of Object.keys(data.viewers)) {
-      payload.link = `https://ucime.se/lesson/${change.after.id}/${viewerKey}`;
+      payload.link = `https://ucime.se/lesson/${snap.id}/${viewerKey}`;
       // eslint-disable-next-line no-await-in-loop
-      await helpers.sendEmail(type, email, payload);
+      await helpers.sendEmail(type, data.viewers[viewerKey].email, payload);
     }
-    return type;
+    return `${type} sent`;
   });
 
 /* ===
@@ -111,7 +98,7 @@ exports.viewerUpdate = functions.https.onRequest(async (req, res) => {
   });
 });
 
-/* ===
+  /* ===
   changes lesson status
   === */
 exports.statusChange = functions.https.onRequest(async (req, res) => {
