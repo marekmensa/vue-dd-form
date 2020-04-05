@@ -103,7 +103,7 @@ exports.viewerUpdate = functions.https.onRequest(async (req, res) => {
   === */
 exports.statusChange = functions.https.onRequest(async (req, res) => {
   corsHandler(req, res, async () => {
-    const { email, name, school, lesson, value } = req.body;
+    const { email, lesson, value } = req.body;
     let userExists = false;
     await db
       .collection('users')
@@ -116,8 +116,11 @@ exports.statusChange = functions.https.onRequest(async (req, res) => {
     const lessonRef = db.collection('lessons').doc(lesson);
     await lessonRef.get().then(async (doc) => {
       const data = doc.data();
+      let school, name;
       if(!doc.exists || data.author !== email || !userExists) {
         res.status(500).send('not found');
+        school = data.school;
+        name = data.name;
       }
       const validator = ['draft', 'ended', 'live'];
       if (validator.indexOf(value) !== -1)
