@@ -134,9 +134,9 @@ exports.statusChange = functions.https.onRequest(async (req, res) => {
             school,
             date: moment(data.start).format('D.M. [od] HH:mm'),
           };
-          payload.link = `https://ucime.se/lesson/${viewerKey}/${viewerKey}`;
+          payload.link = `https://ucime.se/lesson/${lesson}/${viewerKey}`;
           // eslint-disable-next-line no-await-in-loop
-          await helpers.sendEmail('invite', email, payload);
+          await helpers.sendEmail('invite', data.viewers[viewerKey].email, payload);
         }
       } else if (value === 'ended') {
         for (const viewerKey of Object.keys(data.viewers)) {
