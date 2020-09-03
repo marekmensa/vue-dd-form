@@ -1,0 +1,69 @@
+{
+  "name": "vue-dd-form",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Marek Mensa",
+  "repository": "",
+  "bugs": "",
+  "keywords": ["vue-dd-form", "dd-form", "described-data", "json", "data", "form", "forms", "generator", "vue"],
+  "license": "",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "webpack --config config/webpack.config.js",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "lodash": "^4.17.20",
+    "moment": "^2.27.0",
+    "shortid": "^2.2.15",
+    "vue": "^2.6.11",
+    "vue-datetime": "^1.0.0-beta.14",
+    "vue2-editor": "^2.10.2",
+    "vuedraggable": "^2.24.1",
+    "vuex": "^3.5.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.5.0",
+    "@vue/cli-plugin-eslint": "^4.5.0",
+    "@vue/cli-service": "^4.5.0",
+    "@vue/eslint-config-airbnb": "^5.0.2",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "babel-preset-env": "^1.7.0",
+    "cross-env": "^7.0.2",
+    "css-loader": "^4.2.2",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "file-loader": "^6.1.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^8.0.2",
+    "vue-loader": "^15.9.3",
+    "vue-svg-loader": "^0.16.0",
+    "vue-template-compiler": "^2.6.12",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "bro<serslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
