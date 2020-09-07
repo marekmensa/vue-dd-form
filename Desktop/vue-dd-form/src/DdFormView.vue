@@ -387,8 +387,10 @@ export default {
     chunkForPath(path, description) {
       const type = description.view;
       // eslint-disable-next-line max-len
-      const chunk = clone(defaults[description.view]);
+      let chunk = clone(defaults[description.view]);
       if (type === types.GROUP) {
+        // TODO temporary fix - if group under collection, items get merged (in demo / Advanced)
+        chunk = clone({});
         Object.keys(this.descriptions).forEach((key) => {
           const restOfDescription = compact(
             key.split(`${description.path}.`),

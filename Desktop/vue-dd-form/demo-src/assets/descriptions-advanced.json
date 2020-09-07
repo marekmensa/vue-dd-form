@@ -2,7 +2,10 @@
   "public": { "view": "tick", "label": "Make your profile public" },
   "name": { "view": "text", "label": "Full name" },
   "bio": { "view": "area", "html": true, "label": "Short bio" },
-  "avatar": { "view": "upload", "label": "Profile photo (not uploading in demo)" },
+  "avatar": {
+    "view": "upload",
+    "label": "Profile photo (not uploading in demo)"
+  },
   "milestones": { "view": "collection", "label": "Milestones" },
   "milestones[*]": { "view": "group" },
   "milestones[*].title": { "view": "text", "label": "Milestone title" },
