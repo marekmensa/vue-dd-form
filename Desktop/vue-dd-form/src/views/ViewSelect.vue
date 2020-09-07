@@ -166,6 +166,7 @@
       justify-content: flex-start;
       padding: 0 10px;
       transition: .3s;
+      margin: 0;
       cursor: pointer;
 
       &--current {

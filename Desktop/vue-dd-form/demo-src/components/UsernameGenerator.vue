@@ -1,7 +1,7 @@
 <template>
   <div class="input-text__wrapper">
-    <div class="input-text__description" v-if="label">
-      <label class="input-text__label" v-text="label"></label>
+    <div class="input-text__description" v-if="header">
+      <label class="input-text__label" v-text="header"></label>
     </div>
     <input class="input-text" :value="value" :disabled="disabled" @focus="generate" @input="update" />
   </div>
@@ -13,7 +13,7 @@ export default {
   data() {
     return {
       disabled: false,
-      label: this.description.label,
+      header: this.description.header,
     };
   },
   components: {},
@@ -64,6 +64,9 @@ export default {
     flex-grow: 1;
     position: relative;
     background: #43b984;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1280px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg');
+    background-position-y: -105px;
+    background-position-x: -355px;
     padding: 10px 15px 20px;
   }
 

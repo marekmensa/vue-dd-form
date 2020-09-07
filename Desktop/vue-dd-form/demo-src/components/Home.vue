@@ -43,6 +43,7 @@
         class="preview-form__interface preview-form__interface--advanced"
         :descriptions="descriptions.advanced"
         :data="output.advanced"
+        :lang="customLang"
         @submit="submit"
         @change="change"
       >
@@ -168,7 +169,7 @@ export default {
       },
       output: {
         basic: {
-          "title": "Parasite",
+          "title": "Parasite (2019)",
           "description": "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.",
           "genres": [],
           "language": "Korean"
@@ -193,6 +194,10 @@ export default {
       },
       renderCode: true,
       renderForm: true,
+      customLang: {
+        save: 'Continue',
+        add: '+ Add a milestone'
+      }
     };
   },
   components: {
@@ -226,6 +231,7 @@ a {
   text-align: left;
   padding-left: 20px;
   color: #959595;
+  font-weight: 500;
 } 
 .highlight {
   color: #42b983;
