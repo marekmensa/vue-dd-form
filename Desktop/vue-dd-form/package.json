@@ -5,19 +5,32 @@
   "author": "Marek Mensa",
   "repository": "",
   "bugs": "",
-  "keywords": ["vue-dd-form", "dd-form", "described-data", "json", "data", "form", "forms", "generator", "vue"],
+  "keywords": [
+    "vue-dd-form",
+    "dd-form",
+    "described-data",
+    "json",
+    "data",
+    "form",
+    "forms",
+    "generator",
+    "vue"
+  ],
   "license": "",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "webpack --config config/webpack.config.js",
+    "build:demo": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "core-js": "^3.6.5",
     "lodash": "^4.17.20",
     "moment": "^2.27.0",
+    "path": "^0.12.7",
     "shortid": "^2.2.15",
     "vue": "^2.6.11",
+    "vue-code-highlight": "^0.7.5",
     "vue-datetime": "^1.0.0-beta.14",
     "vue2-editor": "^2.10.2",
     "vuedraggable": "^2.24.1",

@@ -32,7 +32,7 @@ import isUndefined from 'lodash/isUndefined';
 import merge from 'lodash/merge';
 import { defaultViewValues as defaults } from './config';
 import ddFormView from './DdFormView.vue';
-import buttonSubmit from './ui-kit/ButtonSubmit.vue';
+import buttonSubmit from './views/ButtonSubmit.vue';
 
 export default {
   props: [
@@ -74,10 +74,10 @@ export default {
     merge,
     update({ path, value }) {
       set(this.data, path, value);
-      this.$emit('change', { path, value });
+      this.$emit('change', { path, value, data: this.data });
     },
     submit() {
-      this.$emit('submit', { value: this.data });
+      this.$emit('submit', { data: this.data });
     },
   },
   components: {
@@ -102,7 +102,7 @@ export default {
       margin: 15px 0;
     }
     &--leaf {
-      margin: 10px 0;
+      margin: 15px 0;
     }
     &__container--removable {
       position: relative;
@@ -113,7 +113,7 @@ export default {
         cursor: initial;
       }
       .view__wrapper {
-        padding: 15px 0;
+        /* padding: 15px 0; */
       }
       .view__wrapper:hover {
         cursor: move;
@@ -161,12 +161,23 @@ export default {
     }
   }
 
-  /* Grid layout classes */
-  .col-1-3, .col-2-3, .col-3-3 {
-    width: calc(100% / 3);
+  h2 {
+    margin: 0;
+    margin-top: 25px;
   }
-  .col-1-2, .col-2-2 {
+
+  /* Grid layout classes */
+  .col--1-3 {
+    width: calc(100% / 3 - 100px);
+  }
+  .col--2-3 {
+    width: calc(2*(100% / 3 - 200px));
+  }
+  .col--1-2 {
     width: calc(100% / 2);
+  }
+  .col--1-1 {
+    width: calc(100%);
   }
   .row {
     display: flex;

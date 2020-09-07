@@ -7,18 +7,16 @@
       <input class="input-counter" :value="count" type="text" disabled="disabled">
       <div class="input-counter__handles">
         <div class="input-counter__handle" @click="add">
-          <icon-plus class="input-counter__icon"></icon-plus>
+          <div class="input-counter__icon">+</div>
         </div>
         <div class="input-counter__handle" @click="subtract">
-          <icon-minus class="input-counter__icon"></icon-minus>
+          <div class="input-counter__icon">–</div>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
-  import iconPlus from '../assets/icon-plus.comp.svg';
-  import iconMinus from '../assets/icon-minus.comp.svg';
 
   export default {
     props: [
@@ -69,10 +67,6 @@
         });
       },
     },
-    components: {
-      iconPlus,
-      iconMinus,
-    },
   };
 </script>
 <style lang="scss" rel="stylesheet/scss" scoped>
@@ -96,6 +90,7 @@
     background-color: #ffffff;
     cursor: default;
     max-width: 100%;
+    user-select: none;
 
     &:focus {
       border: 1px solid #797979;
@@ -127,7 +122,7 @@
       position: absolute;
       right: 0;
       width: 24px;
-      height: 100%;
+      height: 40px;
       border: 1px solid #e2e2e2;
       background-color: #f9f9f9;
       transition: .3s;
@@ -161,6 +156,11 @@
     &__icon {
       width: 8px;
       fill: #4cce52;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      user-select: none;
     }
   }
 </style>

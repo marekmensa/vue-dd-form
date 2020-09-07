@@ -1,0 +1,6 @@
+{
+    "title": {"view": "text", "label": "Movie title"},
+    "description": {"view": "area", "label": "Description"},
+    "genres": {"view": "checkbox", "label": "Genres", "options": ["Action", "Comedy", "Drama", "Fantasy", "Horror", "Mystery", "Romance", "Thriller"]},
+    "language": {"view": "select", "label": "Original language", "options": ["English", "Spanish", "Korean", "Chinese", "French", "Hindi", "German"]}
+}

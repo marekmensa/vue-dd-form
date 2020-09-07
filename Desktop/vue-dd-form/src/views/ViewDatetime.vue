@@ -127,6 +127,7 @@ export default {
 
   input {
     outline: none;
+    box-sizing: border-box;
     border: 1px solid #d8d8d8;
     background-color: #ffffff;
     height: 40px;
@@ -147,7 +148,6 @@ export default {
     &__wrapper {
       display: flex;
       flex-direction: column;
-      flex-grow: 1;
       position: relative;
 
     }

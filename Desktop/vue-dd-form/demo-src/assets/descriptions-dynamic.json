@@ -1,0 +1,9 @@
+{
+    "limitLogins": { "view": "tick", "label": "Limit login attempts" },
+    "limitCount": { "view": "counter", "label": "Number of attempts", "hidden": "_limitNotSelected" },
+    "users": { "view": "collection", "label": "Users", "addable": "_addable" },
+    "users[*]": { "view": "group", "label": "User no. {_userIndex}" },
+    "users[*].name": { "view": "text", "label": "Username" },
+    "users[*].email": { "view": "text", "label": "Email"},
+    "users[*].type": { "view": "radio", "label": "User type", "options": "_userTypes"}
+}

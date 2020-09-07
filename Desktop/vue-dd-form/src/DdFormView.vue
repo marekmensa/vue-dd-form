@@ -113,19 +113,19 @@ import forEach from 'lodash/forEach';
 import uuid from 'shortid';
 import draggable from 'vuedraggable';
 import { viewTypes as types, defaultViewValues as defaults } from './config';
-import headline from './ui-kit/Headline.vue';
-import buttonAdd from './ui-kit/ButtonAdd.vue';
-import buttonRemove from './ui-kit/ButtonRemove.vue';
-import buttonDrag from './ui-kit/ButtonDrag.vue';
-import viewText from './ui-kit/ViewText.vue';
-import viewUpload from './ui-kit/ViewUpload.vue';
-import viewArea from './ui-kit/ViewArea.vue';
-import viewSelect from './ui-kit/ViewSelect.vue';
-import viewTick from './ui-kit/ViewTick.vue';
-import viewCheckbox from './ui-kit/ViewCheckbox.vue';
-import viewCounter from './ui-kit/ViewCounter.vue';
-import viewDatetime from './ui-kit/ViewDatetime.vue';
-import viewRadio from './ui-kit/ViewRadio.vue';
+import headline from './views/Headline.vue';
+import buttonAdd from './views/ButtonAdd.vue';
+import buttonRemove from './views/ButtonRemove.vue';
+import buttonDrag from './views/ButtonDrag.vue';
+import viewText from './views/ViewText.vue';
+import viewUpload from './views/ViewUpload.vue';
+import viewArea from './views/ViewArea.vue';
+import viewSelect from './views/ViewSelect.vue';
+import viewTick from './views/ViewTick.vue';
+import viewCheckbox from './views/ViewCheckbox.vue';
+import viewCounter from './views/ViewCounter.vue';
+import viewDatetime from './views/ViewDatetime.vue';
+import viewRadio from './views/ViewRadio.vue';
 
 export default {
   name: 'ddFormView',

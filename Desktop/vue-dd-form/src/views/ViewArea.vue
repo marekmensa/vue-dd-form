@@ -67,7 +67,7 @@ export default {
       content: '',
       label: this.description.label,
       html: this.description.html,
-      customToolbar: [['bold', 'italic', 'underline'], [{ list: 'ordered' }, { list: 'bullet' }], ['image', 'code-block']],
+      customToolbar: [['bold', 'italic', 'underline'], [{ list: 'ordered' }, { list: 'bullet' }]],
     };
   },
   created() {
