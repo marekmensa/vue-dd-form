@@ -589,7 +589,7 @@ Usage:
     ></dd-form>
     ```
 
-**Check the [demo's source code](https://github.com/marekmensa/vue-dd-form/blob/master/docs-src/components/Home.vue) Custom view to see it in use.**
+**Check the [demo's source code](https://github.com/marekmensa/vue-dd-form/blob/master/docs-src/components/Home.vue) to see it in use.**
 
 
 ### Advanced: Sub-elements
