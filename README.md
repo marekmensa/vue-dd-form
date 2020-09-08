@@ -15,9 +15,9 @@ Try it yourself in a [Live Demo](https://marekmensa.github.io/vue-dd-form/)!
 vue-dd-form aims to reduce the of time creating forms, while keeping the flexibility and data-model persistence. This project is a first implementation of the **Described-Data approach**.
 
 
-## What is Descibed Data?
+## What is Descibed-Data?
 
-Described Data is a concept inspired by the [JSON Schema](https://json-schema.org/). Basically, each node in the data set is assigned a **view** (input), which it then represents on the UI. In practise, vue-dd-form only needs your **data** and **descriptions** to render itself!
+Described-Data is a concept inspired by the [JSON Schema](https://json-schema.org/). Basically, each node in the data set is assigned a **view** (input), which it then represents on the UI. In practise, vue-dd-form only needs your **data** and **descriptions** to render itself!
 
 **"I use a JSON Schema, what is the difference?"**
 - **clarity**: data is described by a dotted-notation, which makes the whole set much more readable
@@ -727,7 +727,7 @@ Form can be styled in verious ways depending on the depth of the adjustment:
 
 # 🏁 Conclusion
 
-There are many useful things which are still not yet implemented (validation, CDN availability etc.). I'd be very thankful for any contributions! Described Data would work the best if it was multi-platform so if you feel like cooperating (React etc.), hit me up!
+There are many useful things which are still not yet implemented (validation, CDN availability etc.). I'd be very thankful for any contributions! Described-Data would work the best if it was multi-platform so if you feel like cooperating (React etc.), hit me up!
 
 # License
 
