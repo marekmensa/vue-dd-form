@@ -2,7 +2,7 @@
 
 A fresh way to create simple or complex forms – **without programming!**
 
-![](https://raw.githubusercontent.com/marekmensa/vue-dd-form/master/demo/demo.gif)
+![](https://raw.githubusercontent.com/marekmensa/vue-dd-form/master/demo.gif)
 
 
 # 🕹 Demo
@@ -57,7 +57,7 @@ import ddForm from 'vue-dd-form';
 ```
 Output of this example looks like this:
 
-![](https://github.com/marekmensa/vue-dd-form/blob/master/docs/getting_started.png?raw=true)
+![](https://github.com/marekmensa/vue-dd-form/blob/master/getting_started.png?raw=true)
 
 ⬇️ **More about all params & events below.**
 
@@ -73,10 +73,10 @@ Your JS Data is described by another JS Object targeting all nodes which should 
 
 ```javascript
 {
-	author: {
-	    name: "J. Cameron",
-	    birth: "2020-09-08T12:11:03.332Z",
-	    active: true
+   author: {
+      name: "J. Cameron",
+      birth: "2020-09-08T12:11:03.332Z",
+      active: true
     }
     title: "Titanic",
     description: "Lorem ipsum ...",
@@ -89,14 +89,14 @@ Your JS Data is described by another JS Object targeting all nodes which should 
 
 ```javascript
 {
-	author: { view: "group", label: "Author" },
-	author.name: { view: "text", label: "Name of author" },
-	author.birth: { view: "datetime", label: "Date of birth" },
-	author.active: { view: "tick", label: "Is the author still active?" },
-	title: { view: "text", label: "Movie title" },
-	description: { view: "area", "label": "Description" },
-	genres: { view: "checkbox", "label: "Genres", options: ["Action", "Comedy", "Drama"] },
-	language: { view: "select", label: "Original language", "options: ["English", "Spanish", "Korean"] }
+  author: { view: "group", label: "Author" },
+  author.name: { view: "text", label: "Name of author" },
+  author.birth: { view: "datetime", label: "Date of birth" },
+  author.active: { view: "tick", label: "Is the author still active?" },
+  title: { view: "text", label: "Movie title" },
+  description: { view: "area", "label": "Description" },
+  genres: { view: "checkbox", "label: "Genres", options: ["Action", "Comedy", "Drama"] },
+  language: { view: "select", label: "Original language", "options: ["English", "Spanish", "Korean"] }
 }
 ```
 
@@ -164,27 +164,27 @@ Any view type can have a String in description value. If the string is found in 
 
 ```jsx
 <dd-form
-	...
-	:functions="myFunctions"
+  ...
+  :functions="myFunctions"
 >
 </dd-form>
 
 data() {
-	return {
-		myFunctions: {
-			'groupHidden': this._groupHidden,
-			'groupIndex': this._groupIndex,
-		},
-	};
+  return {
+      myFunctions: {
+        'groupHidden': this._groupHidden,
+        'groupIndex': this._groupIndex,
+      },
+    };
 },
 
 methods: {
-	_groupHidden({path, value}) {
-	    return value.item < 0;
-	},
-	_groupIndex({path}) {
-		return this.getIndex(path);
-	}
+  _groupHidden({path, value}) {
+    return value.item < 0;
+  },
+  _groupIndex({path}) {
+    return this.getIndex(path);
+   }
 },
 
 ```
@@ -242,13 +242,13 @@ _(Array)_: Consumes only `array`
 
 **Arguments**
 
-`label` _(String)_: Shows title on the top of the view
-`class` _(String or Array)_: View's assigned class
-`wrapper` _(String)_: Name of the view's wrapper
-`hidden` _(Boolean)_: Hides or shows the view
-`draggable` _(Boolean)_: Allows or disallows children dragging
-`deletable` _(Boolean)_: Allows or disallows children delete
-`addable` _(Boolean)_: Allows or disallows to add children
+- `label` _(String)_: Shows title on the top of the view
+- `class` _(String or Array)_: View's assigned class
+- `wrapper` _(String)_: Name of the view's wrapper
+- `hidden` _(Boolean)_: Hides or shows the view
+- `draggable` _(Boolean)_: Allows or disallows children dragging
+- `deletable` _(Boolean)_: Allows or disallows children delete
+- `addable` _(Boolean)_: Allows or disallows to add children
 
 
 ## group
@@ -269,11 +269,11 @@ Serves as Object container and expects to have nested children. It is only an ab
 
 **Arguments**
 
-`label` _(String)_: Shows title on the top of the view
-`class` _(String or Array)_: View's assigned class
-`wrapper` _(String)_: Name of the view's wrapper
-`hidden` _(Boolean)_: Shows or hides the view
-`append` _(Object)_: Specifies the UI invisible appendant data when added or toggled
+- `label` _(String)_: Shows title on the top of the view
+- `class` _(String or Array)_: View's assigned class
+- `wrapper` _(String)_: Name of the view's wrapper
+- `hidden` _(Boolean)_: Shows or hides the view
+- `append` _(Object)_: Specifies the UI invisible appendant data when added or toggled
 
 
 ## text
@@ -284,7 +284,7 @@ Acts as a basic single-line text field.
 
 ```jsx
 {
-		view: 'text',
+    view: 'text',
 }
 ```
 
@@ -294,10 +294,10 @@ Acts as a basic single-line text field.
 
 **Arguments**
 
-`label` _(String)_: Shows title on the top of the view
-`class` _(String or Array)_: View's assigned class
-`hidden` _(Boolean)_: Hides or shows the view
-`wrapper` _(String)_: Name of the view's wrapper
+- `label` _(String)_: Shows title on the top of the view
+- `class` _(String or Array)_: View's assigned class
+- `hidden` _(Boolean)_: Hides or shows the view
+- `wrapper` _(String)_: Name of the view's wrapper
 
 
 
@@ -309,7 +309,7 @@ Acts as a drow-down box.
 
 ```jsx
 {
-		view: 'select',
+    view: 'select',
 }
 ```
 
@@ -319,11 +319,11 @@ Acts as a drow-down box.
 
 **Arguments**
 
-`label` _(String)_: Shows title on the top of the view
-`class` _(String or Array)_: View's assigned class
-`hidden` _(Boolean)_: Hides or shows the view
-`wrapper` _(String)_: Name of the view's wrapper
-`options` _(Array)_: Field option values
+- `label` _(String)_: Shows title on the top of the view
+- `class` _(String or Array)_: View's assigned class
+- `hidden` _(Boolean)_: Hides or shows the view
+- `wrapper` _(String)_: Name of the view's wrapper
+- `options` _(Array)_: Field option values
 
 -   **Plain mode**
     
@@ -335,7 +335,7 @@ Acts as a drow-down box.
     
     ```jsx
     [
-    	{ text: "Dog", value: "doggo" },
+        { text: "Dog", value: "doggo" },
     	{ text: "Cat", value: "caterpillar" }
     ]
     ```
@@ -349,7 +349,7 @@ Acts as a checkbox set.
 
 ```jsx
 {
-		view: 'checkbox',
+    view: 'checkbox',
 }
 ```
 
@@ -359,11 +359,11 @@ Acts as a checkbox set.
 
 **Arguments**
 
-`label` _(String)_: Shows title on the top of the view
-`class` _(String or Array)_: View's assigned class
-`hidden` _(Boolean)_: Hides or shows the view
-`wrapper` _(String)_: Name of the view's wrapper
-`options` _(Array)_: Field option values
+- `label` _(String)_: Shows title on the top of the view
+- `class` _(String or Array)_: View's assigned class
+- `hidden` _(Boolean)_: Hides or shows the view
+- `wrapper` _(String)_: Name of the view's wrapper
+- `options` _(Array)_: Field option values
 
 -   **Plain mode**
     
@@ -388,7 +388,7 @@ Acts as a counter box.
 
 ```jsx
 {
-		view: 'counter',
+    view: 'counter',
 }
 ```
 
@@ -398,12 +398,12 @@ Acts as a counter box.
 
 **Arguments**
 
-`label` _(String)_: Shows title on the top of the view
-`class` _(String or Array)_: View's assigned class
-`hidden` _(Boolean)_: Hides or shows the view
-`wrapper` _(String)_: Name of the view's wrapper
-`min` _(Number)_: Minimum value to select
-`max` _(Number)_: Maximum value to select
+- `label` _(String)_: Shows title on the top of the view
+- `class` _(String or Array)_: View's assigned class
+- `hidden` _(Boolean)_: Hides or shows the view
+- `wrapper` _(String)_: Name of the view's wrapper
+- `min` _(Number)_: Minimum value to select
+- `max` _(Number)_: Maximum value to select
 
 
 ## datetime
@@ -414,7 +414,7 @@ Acts as a date-time selection field.
 
 ```jsx
 {
-		view: 'datetime',
+    view: 'datetime',
 }
 ```
 
@@ -424,12 +424,12 @@ Acts as a date-time selection field.
 
 **Arguments**
 
-`label` _(String)_: Shows title on the top of the view
-`class` _(String or Array)_: View's assigned class
-`hidden` _(Boolean)_: Hides or shows the view
-`wrapper` _(String)_: Name of the view's wrapper
-`min` _(String_)*: Minimum date value
-`max` _(String_)*: Maximum date value
+- `label` _(String)_: Shows title on the top of the view
+- `class` _(String or Array)_: View's assigned class
+- `hidden` _(Boolean)_: Hides or shows the view
+- `wrapper` _(String)_: Name of the view's wrapper
+- `min` _(String_)*: Minimum date value
+- `max` _(String_)*: Maximum date value
 
 _* String in a Date format_
 
@@ -442,7 +442,7 @@ Acts as a box for file uploads and renders into preview box, if consumable by we
 
 ```jsx
 {
-		view: 'upload',
+    view: 'upload',
 }
 ```
 
@@ -452,12 +452,12 @@ Acts as a box for file uploads and renders into preview box, if consumable by we
 
 **Arguments**
 
-`label` _(String)_: Shows title on the top of the view
-`class` _(String or Array)_: View's assigned class
-`endpoint` _(String)_: API endpoint URL*
-`payload` _(Object or String)_: API payload data*
-`hidden` _(Boolean)_: Hides or shows the view
-`wrapper` _(String)_: Name of the view's wrapper
+- `label` _(String)_: Shows title on the top of the view
+- `class` _(String or Array)_: View's assigned class
+- `endpoint` _(String)_: API endpoint URL*
+- `payload` _(Object or String)_: API payload data*
+- `hidden` _(Boolean)_: Hides or shows the view
+- `wrapper` _(String)_: Name of the view's wrapper
 
 _* Endpoint URL receives a POST call with FormData (`image` and `payload`)_
 
@@ -473,7 +473,7 @@ Acts as a multi-line text field with optional WYSIWYG editor.
 
 ```jsx
 {
-		view: 'area',
+  view: 'area',
 }
 ```
 
@@ -483,11 +483,11 @@ Acts as a multi-line text field with optional WYSIWYG editor.
 
 **Arguments**
 
-`label` _(String)_: Shows title on the top of the view
-`class` _(String or Array)_: View's assigned class
-`hidden` _(Boolean)_: Hides or shows the view
-`wrapper` _(String)_: Name of the view's wrapper
-`html` (Boolean): Whether or not to allow WYSIWYG features
+- `label` _(String)_: Shows title on the top of the view
+- `class` _(String or Array)_: View's assigned class
+- `hidden` _(Boolean)_: Hides or shows the view
+- `wrapper` _(String)_: Name of the view's wrapper
+- `html` (Boolean): Whether or not to allow WYSIWYG features
 
 
 ## radio
@@ -498,7 +498,7 @@ Acts as a radio button set.
 
 ```jsx
 {
-		view: 'radio',
+  view: 'radio',
 }
 
 ```
@@ -509,11 +509,11 @@ Acts as a radio button set.
 
 **Arguments**
 
-`label` _(String)_: Shows title on the top of the view
-`class` _(String or Array)_: View's assigned class
-`hidden` _(Boolean)_: Hides or shows the view
-`wrapper` _(String)_: Name of the view's wrapper
-`options` _(Array)_: Field option values
+- `label` _(String)_: Shows title on the top of the view
+- `class` _(String or Array)_: View's assigned class
+- `hidden` _(Boolean)_: Hides or shows the view
+- `wrapper` _(String)_: Name of the view's wrapper
+- `options` _(Array)_: Field option values
 
 -   **Plain mode**
     
@@ -538,7 +538,7 @@ Acts as a single checkbox.
 
 ```jsx
 {
-		view: 'tick',
+  view: 'tick',
 }
 
 ```
@@ -549,10 +549,10 @@ Acts as a single checkbox.
 
 **Arguments**
 
-`label` _(String)_: Shows title on the top of the view
-`class` _(String or Array)_: View's assigned class
-`hidden` _(Boolean)_: Hides or shows the view
-`wrapper` _(String)_: Name of the view's wrapper
+- `label` _(String)_: Shows title on the top of the view
+- `class` _(String or Array)_: View's assigned class
+- `hidden` _(Boolean)_: Hides or shows the view
+- `wrapper` _(String)_: Name of the view's wrapper
 
 
 ## Custom views
@@ -607,17 +607,17 @@ vue-dd-form provides a `:lang` property, which can rewrite the default language 
 
 ```jsx
 <dd-form
-	:lang="customLang",
-	...
+  :lang="customLang",
+  ...
 ></dd-form>
 ```
 
 ...and the lang object
 ```jsx
 customLang: {
-	add: 'Add item',
-	remove: 'Remove item',
-	save: 'Save data'
+  add: 'Add item',
+  remove: 'Remove item',
+  save: 'Save data'
 }
 ```
 
@@ -634,8 +634,8 @@ Views can be wrapped inside separate boxes (divs) so we can style them in any wa
       subheader: '25th September 2020',
       items: [
         ...
-		],
-	}
+	],
+      }
 ```
 
 For instance, if we wanted to have header and sub-header on the left side of the screen and items on the right, the descriptions would look as follows:
@@ -680,10 +680,10 @@ change({ path, value, data }) {
 
 `@submit` fired after form submit, emits data value
 
-```html
+```jsx
 submit({ data }) {
-      // eslint-disable-next-line no-console
-      console.log(data); // ex. => { ... }
+  // eslint-disable-next-line no-console
+  console.log(data); // ex. => { ... }
 },
 
 ```
@@ -691,6 +691,7 @@ submit({ data }) {
 
 ## Styling
 
+Form can be styled in verious ways depending on the depth of the adjustment:
 - Any view can be assigned a class parameter. Class can be your custom one or one of the helper classes below.
 - Any view in a group view can be assigned a wrapper parameter (see Wrappers).
 - If none of above does not fulfill your needs, you can override or define your own views (see Custom views)
@@ -698,32 +699,32 @@ submit({ data }) {
 
 ### Helper classes
 
-`col--1-3` (sets width to 1/3 of the available space)
-`col--2-3` (sets width to 2/3 of the available space)
-`col--1-2` (sets width to one half of the available space)
-`col--1-1` (sets full-width)
-`row` (makes the div's direction inline)
-`row--boxed` (makes the div's direction inline & puts it in a shadowed box)
-`row-responsive` (makes the div's direction inline, but wraps on mobile)
+- `col--1-3` (sets width to 1/3 of the available space)
+- `col--2-3` (sets width to 2/3 of the available space)
+- `col--1-2` (sets width to one half of the available space)
+- `col--1-1` (sets full-width)
+- `row` (makes the div's direction inline)
+- `row--boxed` (makes the div's direction inline & puts it in a shadowed box)
+- `row-responsive` (makes the div's direction inline, but wraps on mobile)
 
 
 ### Other classes appearing in UI
 
-`view`
-`view—root`
-`view—branch`
-`view—leaf`
-`view__container`
-`view__container—removable`
-`view__wrapper—removable`
-`button`
-`button—add`
-`button—remove`
-`button—submit`
-`headline`
+- `view`
+- `view—root`
+- `view—branch`
+- `view—leaf`
+- `view__container`
+- `view__container—removable`
+- `view__wrapper—removable`
+- `button`
+- `button—add`
+- `button—remove`
+- `button—submit`
+- `headline`
 
 
 
-## Conclusion
+# 🏁 Conclusion
 
 There are many useful things which are still not yet implemented (validation, CDN availability etc.). I'd be very thankful for any contributions! Described Data would work the best if it was multi-platform so if you feel like cooperating (React etc.), hit me up!
