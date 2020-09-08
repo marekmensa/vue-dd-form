@@ -729,6 +729,6 @@ Form can be styled in verious ways depending on the depth of the adjustment:
 
 There are many useful things which are still not yet implemented (validation, CDN availability etc.). I'd be very thankful for any contributions! Described Data would work the best if it was multi-platform so if you feel like cooperating (React etc.), hit me up!
 
-## License
+# License
 
 [The MIT License](http://opensource.org/licenses/MIT)
