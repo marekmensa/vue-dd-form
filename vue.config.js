@@ -3,16 +3,16 @@ const path = require('path');
 module.exports = {
   lintOnSave: false,
 
-  outputDir: './demo',
+  outputDir: './docs',
   publicPath: './',
 
   configureWebpack: {
     entry: {
-      app: path.resolve(__dirname, './demo-src/main.js'),
+      app: path.resolve(__dirname, './docs-src/main.js'),
     },
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, './demo-src'),
+        '@': path.resolve(__dirname, './docs-src'),
       },
     },
   },
@@ -20,7 +20,7 @@ module.exports = {
     config.module
       .rule('js')
       .include
-      .add(path.resolve(__dirname, './demo-src'))
+      .add(path.resolve(__dirname, './docs-src'))
 
     const svgRule = config.module.rule('svg')
 
