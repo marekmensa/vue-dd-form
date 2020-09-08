@@ -1,10 +1,10 @@
 {
   "name": "vue-dd-form",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "src/index.js",
   "author": "Marek Mensa",
-  "repository": "",
+  "repository": "https://github.com/marekmensa/vue-dd-form/",
   "bugs": "",
   "keywords": [
     "vue-dd-form",
@@ -17,7 +17,7 @@
     "generator",
     "vue"
   ],
-  "license": "",
+  "license": "The MIT License",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "webpack --config config/webpack.config.js",
