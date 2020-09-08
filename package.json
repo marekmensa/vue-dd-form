@@ -1,7 +1,8 @@
 {
   "name": "vue-dd-form",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
+  "main": "src/index.js",
   "author": "Marek Mensa",
   "repository": "",
   "bugs": "",
