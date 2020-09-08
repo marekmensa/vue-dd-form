@@ -148,6 +148,7 @@ programme[*].items[*].subtitle: { type: 'area', label: 'About' },
 programme[*].items[*].time: { type: 'text', label: 'Time of start' },
 ```
 
+
 ### Dynamic values
 
 Any view type can have a String in description value. If the string is found in provided `functions` set, given function gets executed. The function also receives the child's path and value as a parameter.
@@ -205,6 +206,7 @@ Check the [demo's source code]([https://github.com/marekmensa/vue-dd-form/blob/m
 ### Side note to Descriptions
 The order of descriptions defines the order of the views on the UI. It is also needed to describe first the Object and then it's sub-nodes.
 
+---
 
 
 ## View types
@@ -597,6 +599,8 @@ Some sub-elements can be replaced too: `button-add`, `button-remove`, `button-su
     }
 ```
 
+---
+
 ## Other features
 
 
@@ -664,6 +668,8 @@ In result HTML, the views would look like this
 Afterwards, only thing to be defined are the CSS classes. Check the [demo's source code]([https://github.com/marekmensa/vue-dd-form/blob/master/docs-src/components/Home.vue]	(https://github.com/marekmensa/vue-dd-form/blob/master/docs-src/components/Home.vue)) to see it in use.
 
 
+---
+
 
 ## Events
 
@@ -687,6 +693,8 @@ submit({ data }) {
 },
 
 ```
+
+---
 
 
 ## Styling
