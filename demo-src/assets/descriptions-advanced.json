@@ -1,0 +1,56 @@
+{
+  "public": { "view": "tick", "label": "Make your profile public" },
+  "name": { "view": "text", "label": "Full name" },
+  "bio": { "view": "area", "html": true, "label": "Short bio" },
+  "avatar": {
+    "view": "upload",
+    "label": "Profile photo (not uploading in demo)"
+  },
+  "milestones": { "view": "collection", "label": "Milestones" },
+  "milestones[*]": { "view": "group" },
+  "milestones[*].title": { "view": "text", "label": "Milestone title" },
+  "milestones[*].date": { "view": "datetime", "label": "Date" },
+  "milestones[*].importance": {
+    "view": "counter",
+    "label": "Importance (0 – 10)",
+    "min": 1,
+    "max": 10
+  },
+  "education": { "view": "group", "label": "Education" },
+  "education.status": {
+    "view": "radio",
+    "label": "Current status",
+    "options": [
+      { "text": "I'm studying", "value": "student" },
+      { "text": "I'm employed", "value": "empolyed" },
+      { "text": "I'm a freelancer", "value": "freelance" }
+    ]
+  },
+  "education.reached": {
+    "view": "select",
+    "label": "Highest level of education reached",
+    "options": [
+      "Early childhood education (‘less than primary’ for educational attainment)",
+      "Primary education",
+      "Lower secondary education",
+      "Upper secondary education",
+      "Post-secondary non-tertiary education",
+      "Short-cycle tertiary education",
+      "Bachelor’s or equivalent level",
+      "Master’s or equivalent level",
+      "Doctoral or equivalent level"
+    ]
+  },
+  "education.certificates": {
+    "view": "checkbox",
+    "label": "Certificates",
+    "options": [
+      "Certified Information Security Manager (CISM)",
+      "Certified Ethical Hacker (CEH)",
+      "Certified Information Systems Security Professional (CISSP)",
+      "Certified in Risk and Information Systems Control (CRISC)",
+      "Certified Information Systems Auditor (CISA)",
+      "Google Certified Professional Cloud Architect"
+    ]
+  }
+}

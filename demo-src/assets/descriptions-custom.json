@@ -1,0 +1,5 @@
+{
+    "fullname": { "view": "text", "label": "Full name"},
+    "username": { "view": "generator", "header": "Generate random username"},
+    "consent": { "view": "tick", "label": "I aggree with terms & conditions"}
+}
