@@ -61,7 +61,7 @@ components: {
 	  "name": { view: 'text', label: 'Full name'}
   }
 ```
-Output of this example looks like this:
+Output of this simple example looks like this:
 
 ![](https://github.com/marekmensa/vue-dd-form/blob/master/getting_started.png?raw=true)
 
