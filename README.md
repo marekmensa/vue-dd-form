@@ -206,7 +206,7 @@ Methods can be also put inline to the string. For these cases, the dynamic value
 
 ```
 
-Check the [demo's source code]([https://github.com/marekmensa/vue-dd-form/blob/master/docs-src/components/Home.vue) to see it in use.
+Check the [demo's source code](https://github.com/marekmensa/vue-dd-form/blob/master/docs-src/components/Home.vue) to see it in use.
 
 
 ### Side note to Descriptions
@@ -589,7 +589,7 @@ Usage:
     ></dd-form>
     ```
 
-**Check the [demo's source code]([https://github.com/marekmensa/vue-dd-form/blob/master/docs-src/components/Home.vue) Custom view to see it in use.**
+**Check the [demo's source code](https://github.com/marekmensa/vue-dd-form/blob/master/docs-src/components/Home.vue) Custom view to see it in use.**
 
 
 ### Advanced: Sub-elements
@@ -671,7 +671,7 @@ In result HTML, the views would look like this
 </div>
 ```
 
-Afterwards, only thing to be defined are the CSS classes. Check the [demo's source code]([https://github.com/marekmensa/vue-dd-form/blob/master/docs-src/components/Home.vue) to see it in use.
+Afterwards, only thing to be defined are the CSS classes. Check the [demo's source code](https://github.com/marekmensa/vue-dd-form/blob/master/docs-src/components/Home.vue) to see it in use.
 
 
 ---
