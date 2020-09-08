@@ -632,9 +632,9 @@ customLang: {
 ```
 
 
-### Wrappers
+### Wrappers (beta)
 
-Views can be wrapped inside separate boxes (divs) so we can style them in any way. Look at example data again:
+Views can be wrapped inside separate boxes (DIVs) so we can position them in any way. Look at example data:
 
 ```jsx
 {
@@ -648,7 +648,7 @@ Views can be wrapped inside separate boxes (divs) so we can style them in any wa
       }
 ```
 
-For instance, if we wanted to have header and sub-header on the left side of the screen and items on the right, the descriptions would look as follows:
+If we wanted, for instance, to have header and sub-header on the left side of the screen and items on the right, the descriptions would look as follows:
 
 ```jsx
 programme[*].header: { type: 'text' },
