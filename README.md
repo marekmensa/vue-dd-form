@@ -38,6 +38,12 @@ npm install --save vue-dd-form
 import ddForm from 'vue-dd-form';
 ```
 
+```javascript
+components: {
+  ddForm,
+}
+```
+
 3. And use it!
 
 ```html
