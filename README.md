@@ -38,6 +38,12 @@ npm install --save vue-dd-form
 import ddForm from 'vue-dd-form';
 ```
 
+```javascript
+components: {
+  ddForm,
+}
+```
+
 3. And use it!
 
 ```html
@@ -55,7 +61,7 @@ import ddForm from 'vue-dd-form';
 	  "name": { view: 'text', label: 'Full name'}
   }
 ```
-Output of this example looks like this:
+Output of this simple example looks like this:
 
 ![](https://github.com/marekmensa/vue-dd-form/blob/master/getting_started.png?raw=true)
 
@@ -148,6 +154,7 @@ programme[*].items[*].subtitle: { type: 'area', label: 'About' },
 programme[*].items[*].time: { type: 'text', label: 'Time of start' },
 ```
 
+
 ### Dynamic values
 
 Any view type can have a String in description value. If the string is found in provided `functions` set, given function gets executed. The function also receives the child's path and value as a parameter.
@@ -199,12 +206,13 @@ Methods can be also put inline to the string. For these cases, the dynamic value
 
 ```
 
-Check the [demo's source code]([https://github.com/marekmensa/vue-dd-form/blob/master/docs-src/components/Home.vue]	(https://github.com/marekmensa/vue-dd-form/blob/master/docs-src/components/Home.vue)) to see it in use.
+Check the [demo's source code](https://github.com/marekmensa/vue-dd-form/blob/master/docs-src/components/Home.vue) to see it in use.
 
 
 ### Side note to Descriptions
 The order of descriptions defines the order of the views on the UI. It is also needed to describe first the Object and then it's sub-nodes.
 
+---
 
 
 ## View types
@@ -434,7 +442,7 @@ Acts as a date-time selection field.
 _* String in a Date format_
 
 
-### upload
+## upload
 
 Acts as a box for file uploads and renders into preview box, if consumable by web (image, video, ...).
 
@@ -581,7 +589,7 @@ Usage:
     ></dd-form>
     ```
 
-**Check the [demo's source code]([https://github.com/marekmensa/vue-dd-form/blob/master/docs-src/components/Home.vue]	(https://github.com/marekmensa/vue-dd-form/blob/master/docs-src/components/Home.vue)) with the [UsernameGenerator]([https://github.com/marekmensa/vue-dd-form/blob/master/docs-src/components/UsernameGenerator.vue](https://github.com/marekmensa/vue-dd-form/blob/master/docs-src/components/UsernameGenerator.vue)) Custom view to see it in use.**
+**Check the [demo's source code](https://github.com/marekmensa/vue-dd-form/blob/master/docs-src/components/Home.vue) to see it in use.**
 
 
 ### Advanced: Sub-elements
@@ -596,6 +604,8 @@ Some sub-elements can be replaced too: `button-add`, `button-remove`, `button-su
 	   'group.button-submit': customButtonSubmit,
     }
 ```
+
+---
 
 ## Other features
 
@@ -622,9 +632,9 @@ customLang: {
 ```
 
 
-### Wrappers
+### Wrappers (beta)
 
-Views can be wrapped inside separate boxes (divs) so we can style them in any way. Look at example data again:
+Views can be wrapped inside separate boxes (DIVs) so we can position them in any way. Look at example data:
 
 ```jsx
 {
@@ -638,7 +648,7 @@ Views can be wrapped inside separate boxes (divs) so we can style them in any wa
       }
 ```
 
-For instance, if we wanted to have header and sub-header on the left side of the screen and items on the right, the descriptions would look as follows:
+If we wanted, for instance, to have header and sub-header on the left side of the screen and items on the right, the descriptions would look as follows:
 
 ```jsx
 programme[*].header: { type: 'text' },
@@ -661,8 +671,10 @@ In result HTML, the views would look like this
 </div>
 ```
 
-Afterwards, only thing to be defined are the CSS classes. Check the [demo's source code]([https://github.com/marekmensa/vue-dd-form/blob/master/docs-src/components/Home.vue]	(https://github.com/marekmensa/vue-dd-form/blob/master/docs-src/components/Home.vue)) to see it in use.
+Afterwards, only thing to be defined are the CSS classes. Check the [demo's source code](https://github.com/marekmensa/vue-dd-form/blob/master/docs-src/components/Home.vue) to see it in use.
 
+
+---
 
 
 ## Events
@@ -687,6 +699,8 @@ submit({ data }) {
 },
 
 ```
+
+---
 
 
 ## Styling
