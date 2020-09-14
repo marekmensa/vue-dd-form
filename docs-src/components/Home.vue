@@ -84,7 +84,7 @@
       >
       </dd-form>
     </div>
-    <p class="copyright">© Designed & develped by Marek Mensa
+    <p class="copyright">© Designed & developed by Marek Mensa
     </p>
   </div>
 </template>
