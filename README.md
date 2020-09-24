@@ -163,7 +163,7 @@ Any view type can have a String in description value. If the string is found in 
 ```jsx
 {
    view: 'group'
-   hidden: 'groupHidden'
+   hidden: '_groupHidden'
 }
 
 ```
@@ -180,17 +180,17 @@ Any view type can have a String in description value. If the string is found in 
 data() {
   return {
       myFunctions: {
-        'groupHidden': this._groupHidden,
-        'groupIndex': this._groupIndex,
+        '_groupHidden': this.groupHidden,
+        '_groupIndex': this.groupIndex,
       },
     };
 },
 
 methods: {
-  _groupHidden({path, value}) {
+  groupHidden({path, value}) {
     return value.item < 0;
   },
-  _groupIndex({path}) {
+  groupIndex({path}) {
     return this.getIndex(path);
    }
 },
@@ -202,7 +202,7 @@ Methods can be also put inline to the string. For these cases, the dynamic value
 ```jsx
 {
    view: 'group'
-   label: 'Day no. {groupIndex}'
+   label: 'Day no. {_groupIndex}'
 }
 
 ```
