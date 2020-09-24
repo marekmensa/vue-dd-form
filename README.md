@@ -107,7 +107,8 @@ Your JS Data is described by another JS Object targeting all nodes which should 
 ```
 
 **Description paths**
-So as you can see nodes are targeted by a dotted notation. Each description object has a required value of `view`, which specifies, to which UI element should the node be rendered. Currently there is 11 basic view types, though you can specify your own (Custom views).
+
+So as you can see nodes are targeted by a dotted notation. Each description object has a required value of `view`, which specifies, to which UI element should the node be rendered. Currently there is 11 basic view types, though you can specify your own (see _Custom views_).
 
 
 ### Wildcard paths
