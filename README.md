@@ -282,7 +282,7 @@ Serves as Object container and expects to have nested children. It is only an ab
 - `class` _(String or Array)_: View's assigned class
 - `wrapper` _(String)_: Name of the view's wrapper
 - `hidden` _(Boolean)_: Shows or hides the view
-- `append` _(Object)_: Specifies the UI invisible appendant data when added or toggled
+- `append` _(Object)_: Specifies the UI invisible appendant data to be merged with the object (triggered while adding new item to array)
 
 
 ## text
