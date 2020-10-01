@@ -107,7 +107,8 @@ Your JS Data is described by another JS Object targeting all nodes which should 
 ```
 
 **Description paths**
-So as you can see nodes are targeted by a dotted notation. Each description object has a required value of `view`, which specifies, to which UI element should the node be rendered. Currently there is 11 basic view types, though you can specify your own (Custom views).
+
+So as you can see nodes are targeted by a dotted notation. Each description object has a required value of `view`, which specifies, to which UI element should the node be rendered. Currently there is 11 basic view types, though you can specify your own (see _Custom views_).
 
 
 ### Wildcard paths
@@ -162,7 +163,7 @@ Any view type can have a String in description value. If the string is found in 
 ```jsx
 {
    view: 'group'
-   hidden: 'groupHidden'
+   hidden: '_groupHidden'
 }
 
 ```
@@ -179,17 +180,17 @@ Any view type can have a String in description value. If the string is found in 
 data() {
   return {
       myFunctions: {
-        'groupHidden': this._groupHidden,
-        'groupIndex': this._groupIndex,
+        '_groupHidden': this.groupHidden,
+        '_groupIndex': this.groupIndex,
       },
     };
 },
 
 methods: {
-  _groupHidden({path, value}) {
+  groupHidden({path, value}) {
     return value.item < 0;
   },
-  _groupIndex({path}) {
+  groupIndex({path}) {
     return this.getIndex(path);
    }
 },
@@ -201,7 +202,7 @@ Methods can be also put inline to the string. For these cases, the dynamic value
 ```jsx
 {
    view: 'group'
-   label: 'Day no. {groupIndex}'
+   label: 'Day no. {_groupIndex}'
 }
 
 ```
@@ -281,7 +282,7 @@ Serves as Object container and expects to have nested children. It is only an ab
 - `class` _(String or Array)_: View's assigned class
 - `wrapper` _(String)_: Name of the view's wrapper
 - `hidden` _(Boolean)_: Shows or hides the view
-- `append` _(Object)_: Specifies the UI invisible appendant data when added or toggled
+- `append` _(Object)_: Specifies the UI invisible appendant data to be merged with the object (triggered while adding new item to array)
 
 
 ## text
