@@ -108,6 +108,7 @@ import union from 'lodash/union';
 import clone from 'lodash/clone';
 import compact from 'lodash/compact';
 import includes from 'lodash/includes';
+import merge from 'lodash/merge';
 import isUndefined from 'lodash/isUndefined';
 import forEach from 'lodash/forEach';
 import uuid from 'shortid';
@@ -179,7 +180,6 @@ export default {
     }
     if (!this.isLeaf)
       this.generateKeys(this.isGroup ? this.groupNodes : this.dataValue);
-    if (this.isGroup) this.mergeAppend();
     if (this.isDatetime) this.purifyDatetime();
   },
   computed: {
@@ -311,14 +311,6 @@ export default {
       if (this.dataValue.seconds) date = date.toDate();
       this.dataValue = date;
     },
-    mergeAppend() {
-      if (this.description.append) {
-        this.update({
-          path: this.path,
-          value: { ...this.description.append, ...this.dataValue },
-        });
-      }
-    },
     isViewInWrapper(node, wrapper) {
       const viewDescription = this.findFirstDescriptionForNode(node);
       const viewWrapper = viewDescription ? viewDescription.wrapper : null;
@@ -411,6 +403,8 @@ export default {
             );
           }
         });
+        const append = description.append ? this.getValue(description.append) : {};
+        chunk = merge(chunk, append);
       }
       return chunk;
     },
