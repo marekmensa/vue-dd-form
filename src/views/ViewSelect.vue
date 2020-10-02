@@ -65,7 +65,7 @@
         return data.value || data;
       },
       getText(data) {
-        return data.text || data;
+        return data && data.text ? data.text : data;
       },
       choose(item) {
         this.expanded = !this.expanded;
