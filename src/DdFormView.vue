@@ -30,6 +30,8 @@
           :views="views"
           :lang="lang"
           @change="update"
+          @add="emitAdd"
+          @remove="emitRemove"
         ></dd-form-view>
       </div>
     </div>
@@ -58,6 +60,8 @@
           :views="views"
           :lang="lang"
           @change="update"
+          @add="emitAdd"
+          @remove="emitRemove"
         >
          <component
             :is="allViews['collection.button-drag']"
@@ -91,6 +95,8 @@
         :description="description"
         :path="path"
         @change="update"
+        @add="emitAdd"
+        @remove="emitRemove"
       ></component>
     </div>
     <!-- SLOT: REMOVE BUTTON -->
@@ -361,7 +367,7 @@ export default {
       const removedValue = this.dataValue.find((val, i) => i === index);
       const current = this.dataValue.filter((val, i) => i !== index);
       this.update({ path, value: current });
-      this.$emit('remove', { path, value: removedValue, index });
+      this.emitRemove({ path, value: removedValue, index });
       this.removeKey(index);
     },
     add(path, descriptionForChild) {
@@ -371,8 +377,14 @@ export default {
         current.push(chunk);
         this.addKey();
         this.update({ path, value: current });
-        this.$emit('add', { path, value: chunk });
+        this.emitAdd({ path, value: chunk });
       }
+    },
+    emitAdd({ path, value }) {
+      this.$emit('add', { path, value: chunk });
+    },
+    emitRemove({ path, value, index }) {
+      this.$emit('remove', { path, value, index });
     },
     addKey() {
       this.viewKeys.push(uuid.generate());

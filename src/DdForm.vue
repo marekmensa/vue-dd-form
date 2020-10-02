@@ -85,8 +85,8 @@ export default {
     emitAdd({ path, value }) {
       this.$emit('add', { path, value, data: this.data });
     },
-    emitRemove({ path, value }) {
-      this.$emit('remove', { path, value, data: this.data });
+    emitRemove({ path, value, index }) {
+      this.$emit('remove', { path, value, index, data: this.data });
     }
   },
   components: {
