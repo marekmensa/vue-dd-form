@@ -381,7 +381,7 @@ export default {
       }
     },
     emitAdd({ path, value }) {
-      this.$emit('add', { path, value: chunk });
+      this.$emit('add', { path, value });
     },
     emitRemove({ path, value, index }) {
       this.$emit('remove', { path, value, index });
