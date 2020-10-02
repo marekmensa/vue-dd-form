@@ -680,7 +680,7 @@ Afterwards, only thing to be defined are the CSS classes. Check the [demo's sour
 
 ## Events
 
-`@change` fired after any value change, emits path and value changed
+`@change` fired after any value change, emits path, value changed & current data set
 
 ```html
 change({ path, value, data }) {
@@ -697,6 +697,29 @@ change({ path, value, data }) {
 submit({ data }) {
   // eslint-disable-next-line no-console
   console.log(data); // ex. => { ... }
+},
+
+```
+
+`@add` fired after a item is added to a collection, emits path, value added & current data set
+
+```html
+add({ path, value, data }) {
+      // eslint-disable-next-line no-console
+      console.log(path, value); // ex. => 'programme[*].options', { header: 'Friday', ... }
+      console.log(data); // ex. => { ... }
+},
+
+```
+
+`@remove` fired after a item is added to a collection, emits path, value removed, index & current data set
+
+```html
+remove({ path, value, data, index }) {
+      // eslint-disable-next-line no-console
+      console.log(path, value); //  ex. => 'programme[*].options', { header: 'Friday', ... }
+      console.log(data); // ex. => { ... }
+      console.log(index); // ex. => 1
 },
 
 ```

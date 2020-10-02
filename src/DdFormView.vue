@@ -358,19 +358,21 @@ export default {
       return firstValid;
     },
     remove(path, index) {
+      const removedValue = this.dataValue.find((val, i) => i === index);
       const current = this.dataValue.filter((val, i) => i !== index);
       this.update({ path, value: current });
-      this.$emit('remove', { path, value: current });
+      this.$emit('remove', { path, value: removedValue, index });
       this.removeKey(index);
     },
     add(path, descriptionForChild) {
       const current = clone(this.dataValue);
       if (descriptionForChild) {
-        current.push(this.chunkForPath(path, descriptionForChild));
+        const chunk = this.chunkForPath(path, descriptionForChild);
+        current.push(chunk);
         this.addKey();
       }
       this.update({ path, value: current });
-      this.$emit('add', { path, value: current });
+      this.$emit('add', { path, value: chunk });
     },
     addKey() {
       this.viewKeys.push(uuid.generate());
