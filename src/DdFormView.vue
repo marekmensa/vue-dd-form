@@ -370,9 +370,9 @@ export default {
         const chunk = this.chunkForPath(path, descriptionForChild);
         current.push(chunk);
         this.addKey();
+        this.update({ path, value: current });
+        this.$emit('add', { path, value: chunk });
       }
-      this.update({ path, value: current });
-      this.$emit('add', { path, value: chunk });
     },
     addKey() {
       this.viewKeys.push(uuid.generate());
