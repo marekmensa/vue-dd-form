@@ -9,7 +9,10 @@
           :functions="functions"
           :views="views"
           :lang="langValue"
-          @change="update">
+          @change="update"
+          @add="emitAdd"
+          @remove="emitRemove"
+          >
         </dd-form-view>
         <component
             class="button--submit"
@@ -79,6 +82,12 @@ export default {
     submit() {
       this.$emit('submit', { data: this.data });
     },
+    emitAdd({ path, value }) {
+      this.$emit('add', { path, value, data: this.data });
+    },
+    emitRemove({ path, value }) {
+      this.$emit('remove', { path, value, data: this.data });
+    }
   },
   components: {
     ddFormView,

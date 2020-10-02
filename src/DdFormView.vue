@@ -360,6 +360,7 @@ export default {
     remove(path, index) {
       const current = this.dataValue.filter((val, i) => i !== index);
       this.update({ path, value: current });
+      this.$emit('remove', { path, value: current });
       this.removeKey(index);
     },
     add(path, descriptionForChild) {
@@ -369,6 +370,7 @@ export default {
         this.addKey();
       }
       this.update({ path, value: current });
+      this.$emit('add', { path, value: current });
     },
     addKey() {
       this.viewKeys.push(uuid.generate());
