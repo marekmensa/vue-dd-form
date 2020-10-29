@@ -93,9 +93,9 @@ export default {
 .vdatetime-popup__actions {
   margin-top: 15px;
   &__button {
-    color: #000000;
+    color: #000000 !important;
     &:hover {
-      color: #4cce52;
+      color: #4cce52 !important;
     }
   }
 }
@@ -106,7 +106,7 @@ export default {
 
 .vdatetime-popup {
   font-family: 'Open Sans', sans-serif;
-  position: absolute;
+  position: absolute !important;
   top: 77.5px;
   left: auto;
   transform: none;

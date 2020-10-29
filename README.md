@@ -743,7 +743,7 @@ Form can be styled in verious ways depending on the depth of the adjustment:
 - `col--1-1` (sets full-width)
 - `row` (makes the div's direction inline)
 - `row--boxed` (makes the div's direction inline & puts it in a shadowed box)
-- `row-responsive` (makes the div's direction inline, but wraps on mobile)
+- `row--responsive` (makes the div's direction inline, but wraps on mobile)
 
 
 ### Other classes appearing in UI

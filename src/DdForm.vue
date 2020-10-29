@@ -200,13 +200,13 @@ export default {
       box-shadow: 0 0 17px rgba(0, 0, 0, 0.1);
       padding: 10px 20px;
     }
-  }
-
-  .row-responsive {
+    &--responsive {
       display: flex;
       flex-direction: row;
       @media (max-width: 1023px) {
         flex-direction: column;
       }
+    }
   }
+
 </style>
