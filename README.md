@@ -581,6 +581,11 @@ Usage:
     
     ```
     
+    ```jsx
+    import customTextView from 'path/to/custom-view';
+    
+    ```
+    
     ...and bind the data in dd-form
     
     ```jsx
