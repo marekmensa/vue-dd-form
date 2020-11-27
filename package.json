@@ -1,6 +1,6 @@
 {
   "name": "vue-dd-form",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "",
   "main": "src/index.js",
   "author": "Marek Mensa",
@@ -75,7 +75,7 @@
     },
     "rules": {}
   },
-  "bro<serslist": [
+  "browserslist": [
     "> 1%",
     "last 2 versions",
     "not dead"
