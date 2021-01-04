@@ -31,7 +31,7 @@
 </template>
 <script>
   import get from 'lodash/get';
-  import iconExpand from '../assets/icon-expand.comp.svg';
+  import iconExpand from '../assets/icon-expand.vue';
 
   export default {
     data() {

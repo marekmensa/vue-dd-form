@@ -12,7 +12,7 @@
   </label>
 </template>
 <script>
-  import iconCheck from '../assets/icon-check.comp.svg';
+  import iconCheck from '../assets/icon-check.vue';
 
   export default {
     props: [

@@ -13,8 +13,8 @@
 </template>
 <script>
   import axios from 'axios';
-  import iconUpload from '../assets/icon-upload.comp.svg';
-  import iconFile from '../assets/file.comp.svg';
+  import iconUpload from '../assets/icon-upload.vue';
+  import iconFile from '../assets/file.vue';
 
   export default {
     data() {
