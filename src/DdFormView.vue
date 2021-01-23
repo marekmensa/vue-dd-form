@@ -4,21 +4,31 @@
 <template>
   <div
     class="view__container"
-    :class="{'view__container--removable' : isRemovable}"
+    :class="{ 'view__container--removable': isRemovable }"
     @mouseenter="easeHover(true)"
     @mouseleave="easeHover(false)"
   >
     <!-- SLOT: DRAG BUTTON -->
-    <div class="button--drag" :style="elementStyles[!hover ? 'hidden' : 'none']">
+    <div
+      class="button--drag"
+      :style="elementStyles[!hover ? 'hidden' : 'none']"
+    >
       <slot name="drag-button"></slot>
     </div>
     <!-- VIEW: BRANCH (GROUP) -->
-    <div class="view view--branch" :class="description.class" v-if="isGroup && !isHidden">
-      <component
-        :is="allViews['group.headline']"
-        v-if="description.label"
-      >{{ description.label }}</component>
-      <div class="view__wrapper" v-for="(wrapper, index) in groupWrappers" :class="wrapper">
+    <div
+      class="view view--branch"
+      :class="description.class"
+      v-if="isGroup && !isHidden"
+    >
+      <component :is="allViews['group.headline']" v-if="description.label">{{
+        description.label
+      }}</component>
+      <div
+        class="view__wrapper"
+        v-for="(wrapper, index) in groupWrappers"
+        :class="wrapper"
+      >
         <dd-form-view
           v-for="(node, index) in groupNodes"
           v-if="isViewInWrapper(node, wrapper)"
@@ -36,15 +46,20 @@
       </div>
     </div>
     <!-- VIEW: BRANCH (COLLECTION) -->
-    <div class="view view--branch" :class="description.class" v-else-if="isCollection && !isHidden">
+    <div
+      class="view view--branch"
+      :class="description.class"
+      v-else-if="isCollection && !isHidden"
+    >
       <component
         :is="allViews['collection.headline']"
         v-if="description.label"
-      >{{ description.label }}</component>
+        >{{ description.label }}</component
+      >
       <draggable
         class="view__wrapper"
         ghost-class="ghost"
-        :class="{'view__wrapper--draggable': isDraggable}"
+        :class="{ 'view__wrapper--draggable': isDraggable }"
         :disabled="!isDraggable"
         :options="draggableOptions"
         v-model="dataValue"
@@ -63,7 +78,7 @@
           @add="emitAdd"
           @remove="emitRemove"
         >
-         <component
+          <component
             :is="allViews['collection.button-drag']"
             :text="lang['drag']"
             slot="drag-button"
@@ -87,7 +102,11 @@
       ></component>
     </div>
     <!-- VIEW: LEAF -->
-    <div class="view view--leaf" :class="description.class" v-else-if="isLeaf && !isHidden">
+    <div
+      class="view view--leaf"
+      :class="description.class"
+      v-else-if="isLeaf && !isHidden"
+    >
       <component
         v-if="allViews[description.view]"
         :is="allViews[description.view]"
@@ -100,7 +119,10 @@
       ></component>
     </div>
     <!-- SLOT: REMOVE BUTTON -->
-    <div class="button--remove" :style="elementStyles[!hover ? 'hidden' : 'none']">
+    <div
+      class="button--remove"
+      :style="elementStyles[!hover ? 'hidden' : 'none']"
+    >
       <slot name="remove-button"></slot>
     </div>
   </div>
@@ -182,7 +204,10 @@ export default {
   },
   created() {
     if (isUndefined(this.data)) {
-      this.update({ path: this.path, value: defaults[this.description.view] });
+      this.update({
+        path: this.path,
+        value: this.description.defaultValue || defaults[this.description.view],
+      });
     }
     if (!this.isLeaf)
       this.generateKeys(this.isGroup ? this.groupNodes : this.dataValue);
@@ -395,7 +420,7 @@ export default {
     chunkForPath(path, description) {
       const type = description.view;
       // eslint-disable-next-line max-len
-      let chunk = clone(defaults[description.view]);
+      let chunk = description.defaultValue || clone(defaults[description.view]);
       if (type === types.GROUP) {
         // TODO temporary fix - if group under collection, items get merged (in demo / Advanced)
         chunk = clone({});
@@ -410,7 +435,7 @@ export default {
             !includes(restOfDescription, '[')
           ) {
             // eslint-disable-next-line max-len
-            const emptyViewValue = clone(defaults[currentDescription.view]);
+            const emptyViewValue = description.defaultValue || clone(defaults[currentDescription.view]);
             // eslint-disable-next-line max-len
             set(
               chunk,
@@ -419,7 +444,9 @@ export default {
             );
           }
         });
-        const append = description.append ? this.getValue(description.append) : {};
+        const append = description.append
+          ? this.getValue(description.append)
+          : {};
         chunk = merge(chunk, append);
       }
       return chunk;
@@ -489,7 +516,6 @@ export default {
       }
     },
     easeHover(value) {
-
       /* clear any hover countdown */
       if (this.hoverTimeout) clearTimeout(this.hoverTimeout);
 
@@ -497,17 +523,16 @@ export default {
       if (value) {
         this.hover = true;
         this.hoverProcessing = false;
-      }
+      } else {
 
       /* hide controls 2000ms @mouseleave */
-      else {
         this.hoverProcessing = true;
         this.hoverTimeout = setTimeout(() => {
           this.hover = false;
           this.hoverProcessing = false;
         }, 2000);
       }
-    }
+    },
   },
   components: {
     draggable,

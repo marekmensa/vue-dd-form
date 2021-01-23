@@ -258,6 +258,7 @@ _(Array)_: Consumes only `array`
 - `draggable` _(Boolean)_: Allows or disallows children dragging
 - `deletable` _(Boolean)_: Allows or disallows children delete
 - `addable` _(Boolean)_: Allows or disallows to add children
+- `defaultValue` _(*)_: Override of view's default value
 
 
 ## group
@@ -283,6 +284,7 @@ Serves as Object container and expects to have nested children. It is only an ab
 - `wrapper` _(String)_: Name of the view's wrapper
 - `hidden` _(Boolean)_: Shows or hides the view
 - `append` _(Object)_: Specifies the UI invisible appendant data to be merged with the object (triggered while adding new item to array)
+- `defaultValue` _(*)_: Override of view's default value
 
 
 ## text
@@ -307,6 +309,7 @@ Acts as a basic single-line text field.
 - `class` _(String or Array)_: View's assigned class
 - `hidden` _(Boolean)_: Hides or shows the view
 - `wrapper` _(String)_: Name of the view's wrapper
+- `defaultValue` _(*)_: Override of view's default value
 
 
 
@@ -333,6 +336,7 @@ Acts as a drow-down box.
 - `hidden` _(Boolean)_: Hides or shows the view
 - `wrapper` _(String)_: Name of the view's wrapper
 - `options` _(Array)_: Field option values
+- `defaultValue` _(*)_: Override of view's default value
 
 -   **Plain mode**
     
@@ -373,6 +377,7 @@ Acts as a checkbox set.
 - `hidden` _(Boolean)_: Hides or shows the view
 - `wrapper` _(String)_: Name of the view's wrapper
 - `options` _(Array)_: Field option values
+- `defaultValue` _(*)_: Override of view's default value
 
 -   **Plain mode**
     
@@ -413,6 +418,7 @@ Acts as a counter box.
 - `wrapper` _(String)_: Name of the view's wrapper
 - `min` _(Number)_: Minimum value to select
 - `max` _(Number)_: Maximum value to select
+- `defaultValue` _(*)_: Override of view's default value
 
 
 ## datetime
@@ -439,6 +445,7 @@ Acts as a date-time selection field.
 - `wrapper` _(String)_: Name of the view's wrapper
 - `min` _(String_)*: Minimum date value
 - `max` _(String_)*: Maximum date value
+- `defaultValue` _(*)_: Override of view's default value
 
 _* String in a Date format_
 
@@ -467,6 +474,7 @@ Acts as a box for file uploads and renders into preview box, if consumable by we
 - `payload` _(Object or String)_: API payload data*
 - `hidden` _(Boolean)_: Hides or shows the view
 - `wrapper` _(String)_: Name of the view's wrapper
+- `defaultValue` _(*)_: Override of view's default value
 
 _* Endpoint URL receives a POST call with FormData (`image` and `payload`)_
 
@@ -497,6 +505,7 @@ Acts as a multi-line text field with optional WYSIWYG editor.
 - `hidden` _(Boolean)_: Hides or shows the view
 - `wrapper` _(String)_: Name of the view's wrapper
 - `html` (Boolean): Whether or not to allow WYSIWYG features
+- `defaultValue` _(*)_: Override of view's default value
 
 
 ## radio
@@ -523,6 +532,7 @@ Acts as a radio button set.
 - `hidden` _(Boolean)_: Hides or shows the view
 - `wrapper` _(String)_: Name of the view's wrapper
 - `options` _(Array)_: Field option values
+- `defaultValue` _(*)_: Override of view's default value
 
 -   **Plain mode**
     
@@ -562,6 +572,7 @@ Acts as a single checkbox.
 - `class` _(String or Array)_: View's assigned class
 - `hidden` _(Boolean)_: Hides or shows the view
 - `wrapper` _(String)_: Name of the view's wrapper
+- `defaultValue` _(*)_: Override of view's default value
 
 
 ## Custom views
