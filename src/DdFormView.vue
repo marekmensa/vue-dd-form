@@ -206,7 +206,9 @@ export default {
     if (isUndefined(this.data)) {
       this.update({
         path: this.path,
-        value: this.description.defaultValue || defaults[this.description.view],
+        value: clone(
+          this.description.defaultValue || defaults[this.description.view],
+        ),
       });
     }
     if (!this.isLeaf)
@@ -435,7 +437,9 @@ export default {
             !includes(restOfDescription, '[')
           ) {
             // eslint-disable-next-line max-len
-            const emptyViewValue = description.defaultValue || clone(defaults[currentDescription.view]);
+            const emptyViewValue =
+              description.defaultValue ||
+              clone(defaults[currentDescription.view]);
             // eslint-disable-next-line max-len
             set(
               chunk,
@@ -524,8 +528,7 @@ export default {
         this.hover = true;
         this.hoverProcessing = false;
       } else {
-
-      /* hide controls 2000ms @mouseleave */
+        /* hide controls 2000ms @mouseleave */
         this.hoverProcessing = true;
         this.hoverTimeout = setTimeout(() => {
           this.hover = false;
