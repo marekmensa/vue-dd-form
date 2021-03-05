@@ -33,7 +33,7 @@ import compact from 'lodash/compact';
 import includes from 'lodash/includes';
 import isUndefined from 'lodash/isUndefined';
 import merge from 'lodash/merge';
-import { defaultViewValues as defaults } from './config';
+import { viewTypes as types, defaultViewValues as defaults } from './config';
 import ddFormView from './DdFormView.vue';
 import buttonSubmit from './views/ButtonSubmit.vue';
 
@@ -60,7 +60,7 @@ export default {
     };
   },
   created() {
-    this.values = clone(this.data) || defaults[this.viewTypes.GROUP];
+    this.values = clone(this.data) || defaults[types.GROUP];
   },
   computed: {
     submitButtonComponent() {
