@@ -207,7 +207,7 @@ export default {
       this.update({
         path: this.path,
         value: clone(
-          this.description.defaultValue || defaults[this.description.view],
+          !isUndefined(this.description.defaultValue) ? this.description.defaultValue : defaults[this.description.view],
         ),
       });
     }
