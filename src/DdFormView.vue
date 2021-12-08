@@ -61,7 +61,10 @@
         ghost-class="ghost"
         :class="{ 'view__wrapper--draggable': isDraggable }"
         :disabled="!isDraggable"
-        :options="draggableOptions"
+        :draggable="'.view__container'"
+        :filter="'input'"
+        :prevent-on-filter="false"
+        :animation="0"
         v-model="dataValue"
         @change="updateCollection"
       >
@@ -187,12 +190,6 @@ export default {
         ...this.views,
       },
       viewKeys: [],
-      draggableOptions: {
-        draggable: '.view__container',
-        filter: 'input',
-        preventOnFilter: false,
-        animation: 0,
-      },
       elementStyles: {
         hidden: {
           visibility: 'hidden',
